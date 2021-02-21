@@ -17,6 +17,7 @@ def main():
         return flask.render_template('main.html')
 
     if flask.request.method == 'POST':
+        book_title = flask.request.form['book_title']
         book_pages = np.log10(int(flask.request.form['book_pages']) + 1)
         book_review_count = np.log10(int(flask.request.form['book_review_count']) + 1)
         book_rating_count = np.log10(int(flask.request.form['book_rating_count']) + 1)
